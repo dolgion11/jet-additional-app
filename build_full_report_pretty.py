@@ -447,3 +447,10 @@ ws = wb.create_sheet("materiality_raw"); write_table(ws, MAT_RAW, freeze=False, 
 
 wb.save(OUT_PATH)
 print(f"Done! Saved -> {Path(OUT_PATH).resolve()}")
+import streamlit as st
+
+def generate_report(df):
+    st.header("📊 Статистик тайлан")
+    st.write("Мөрийн тоо:", len(df))
+    st.write(df.head())
+
