@@ -3,7 +3,7 @@
 import streamlit as st
 import pandas as pd
 from pathlib import Path
-import build_full_report_pretty_with_main as report  # шинэчлэгдсэн кодын нэр
+import build_full_report_pretty as report  # шинэчлэгдсэн кодын нэр
 
 st.set_page_config(page_title="JET Audit Automation", layout="centered")
 
