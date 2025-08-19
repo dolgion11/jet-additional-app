@@ -16,8 +16,8 @@ st.markdown("""
 # -----------------------------
 # File Upload хэсэг
 # -----------------------------
-gl_file = st.file_uploader("GL Excel файл оруулна уу", type=["xlsx"])
-tb_file = st.file_uploader("TB Excel файл оруулж болно (заавал биш)", type=["xlsx"])
+gl_file = st.file_uploader(" Excel файл оруулна уу", type=["xlsx"])
+
 
 # -----------------------------
 # Generate Report Button
