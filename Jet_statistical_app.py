@@ -7,8 +7,8 @@ import tempfile
 import os
 
 # App configuration
-st.set_page_config(page_title="JET Audit Automation", layout="centered")
-st.title("📊 JET Audit Automation Report Generator")
+st.set_page_config(page_title="JET Statistics Automation", layout="centered")
+st.title("📊 JET statistics Automation Report Generator")
 
 st.markdown("""
 Энэхүү апп нь таны оруулсан **GL/TB Excel файлуудаас** аудитын тайлан автоматаар үүсгэнэ.
