@@ -27,18 +27,18 @@ if st.button("✅ Тайлан үүсгэх"):
         # Түр хадгалалт
         gl_path = Path("uploaded_gl.xlsx")
         with open(gl_path, "wb") as f:
-            f.write(gl_file.read())
-
-        if tb_file:
-            tb_path = Path("uploaded_tb.xlsx")
-            with open(tb_path, "wb") as f:
-                f.write(tb_file.read())
-        else:
-            tb_path = None
-
-        # Таны кодын замуудыг өөрчилнө
-        report.INPUT_XLSX_GL = gl_path
-        report.INPUT_XLSX_TB = tb_path if tb_file else gl_path
+         30    f.write(gl_file.read())
+31
+32    if tb_file:
+33        tb_path = Path("uploaded_tb.xlsx")
+34        with open(tb_path, "wb") as f:
+35            f.write(tb_file.read())
+36    else:
+37        tb_path = None
+38
+39    # Initialize variables for report generation
+40    report.INPUT_XLSX_GL = gl_path
+41    report.INPUT_XLSX_TB = tb_path  # Set TB path if available
         report.OUTPUT_XLSX   = Path("final_report.xlsx")
 
         # Кодоо ажиллуулна
