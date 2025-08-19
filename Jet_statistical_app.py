@@ -29,7 +29,7 @@ if st.button("✅ Тайлан үүсгэх"):
         with open(gl_path, "wb") as f:
             f.write(gl_file.read())
 
-        if tb_file:
+        if tb_file is not none:
             tb_path = Path("uploaded_tb.xlsx")
             with open(tb_path, "wb") as f:
                 f.write(tb_file.read())
