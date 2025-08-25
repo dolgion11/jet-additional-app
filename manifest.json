@@ -1,0 +1,22 @@
+{
+  "short_name": "JET Audit",
+  "name": "JET Audit Automation",
+  "description": "Аудитын тайлан автомат үүсгэгч апп",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#4f8af9",
+  "background_color": "#ffffff",
+  "scope": "/"
+}
