@@ -6,6 +6,9 @@ on:
       - 'icon-*.svg'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   convert:
     runs-on: ubuntu-latest
@@ -35,8 +38,8 @@ jobs:
 
     - name: Commit and push PNG files
       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
+        git config --local user.email "github-actions@example.com"
+        git config --local user.name "GitHub Actions"
         git add icon-*.png
-        git diff --staged --quiet || git commit -m "Auto-convert SVG to PNG"
-        git push origin main
+        git commit -m "Auto-convert SVG to PNG" || echo "No changes to commit"
+        git push
