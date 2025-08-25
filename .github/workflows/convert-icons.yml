@@ -1,0 +1,40 @@
+name: Convert SVG to PNG
+
+on:
+  push:
+    paths:
+      - 'icon-*.svg'
+  workflow_dispatch:
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install cairosvg
+      run: pip install cairosvg
+
+    - name: Convert SVG to PNG
+      run: |
+        python -c "
+        import cairosvg
+        cairosvg.svg2png(url='icon-192.svg', write_to='icon-192.png')
+        cairosvg.svg2png(url='icon-512.svg', write_to='icon-512.png')
+        print('Icons converted successfully!')
+        "
+
+    - name: Commit and push PNG files
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add icon-*.png
+        git diff --staged --quiet || git commit -m "Auto-convert SVG to PNG"
+        git push
